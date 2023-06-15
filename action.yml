@@ -1,17 +1,14 @@
-name: 'Asana Git Integration'
-description: 'Asana Github Actions'
+name: 'Asana Github Issues Integration'
+description: 'Create Asana task based on a Github Issue'
 inputs:
   asana-pat:
     description: 'Asana Public Access Token.'
     required: true
-  task-comment:
-    description: 'Provide text, which will add a comment with the pull request link to the asana task.'
-    required: false
-  targets:
-    description: 'JSON array of objects having project and section where to move current task. Move task only if it exists in target project.'
-    required: false
-  trigger-phrase:
-    description: 'Prefix before the task i.e ASANA TASK: https://app.asana.com/1/2/3'
+  asana-project:
+    description: 'Asana Project Id where the Tasks will be added.'
+    required: true
+  action:
+    description: 'Action that will be executed. `create-task` to create a task based on the ISSUE'
     required: true
 branding:
   icon: 'chevron-right'  
